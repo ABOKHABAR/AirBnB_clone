@@ -5,7 +5,7 @@ import os
 from models.user import User
 from models.base_model import BaseModel
 
-#this is so hard==cant do it
+
 class TestUser(unittest.TestCase):
 
     @classmethod
@@ -23,8 +23,6 @@ class TestUser(unittest.TestCase):
             os.remove("file.json")
         except FileNotFoundError:
             pass
-
-#class method
 
     def test_is_subclass(self):
         self.assertTrue(issubclass(self.my_user.__class__, BaseModel), True)

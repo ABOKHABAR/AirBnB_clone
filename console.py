@@ -14,12 +14,12 @@ from models.engine.file_storage import FileStorage
 from datetime import datetime
 
 """
-Modulename == consule.py  command console
+Module consule.py a cmd console
 """
 
 
 class HBNBCommand(cmd.Cmd):
-    ''' a cmd sdasdsajdiajd interpreter csdadslass '''
+    ''' a command interpreter class '''
     prompt = "(hbnb)"
 
     All_class_dict = {
@@ -33,24 +33,24 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_EOF(self, arg):
-        '''Quit command cL+sadaDsdasdahsdia to exit the program'''
+        '''Quit command CTRL+D to exit the program'''
         print("")
         return True
 
     def do_quit(self, arg):
-        ''' Quit cmd so u can  exit the program '''
+        ''' Quit command to exit the program '''
         return True
 
     def do_nothing(self, arg):
-        ''' does litterally nothing '''
+        ''' does nothing '''
         pass
 
     def emptyline(self):
-        ''' an empty liasdasdsadsadsadnasdadade + ENTER shouldn’tsadadasdasdad execute anything '''
+        ''' an empty line + ENTER shouldn’t execute anything '''
         pass
 
     def do_create(self, args):
-        ''' Creates a new indasdadadadadsadstance BaseModel, saves printdsadsadsads its id '''
+        ''' Creates a new instance BaseModel, saves prints its id '''
         if args == "":
             print("** class name missing **")
             return
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
         print(new.id)
 
     def do_show(self, args):
-        ''' Prints the string asap to  repr of aasdsadsadn instances class name and id '''
+        ''' Prints the string repr of an instances class name and id '''
         arg = shlex.split(args)
         if len(arg) == 0:
             print("** class name missing **")
@@ -106,8 +106,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, args):
-        ''' Prints all string representationsjhdaiusgdiuahkjdasdh of all instances based or not
-            on the class name. Ex: $ all asdadadsaddadBaseModel or $udhaiuhdiudiuhiudhaiuhdajdsahd all '''
+        ''' Prints all string representation of all instances based or not
+            on the class name. Ex: $ all BaseModel or $ all '''
         storage.reload()
         json_dict = []
         obj_dict = storage.all()
@@ -128,7 +128,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, args):
         ''' Updates an instance based on the class name & id adding/updating
-            attribute BaseModel 3261873218378217381783 email "amossab89@gmail.com". '''
+            attribute (save the change into the JSON file). Ex: $ update
+            BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com". '''
 
         if not args:
             print("** class name missing **")
@@ -166,7 +167,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update2(self, args):
         ''' Updates an instance based on the class name & id adding/updating
-            attribute. Ex: $ update BaseModel 716171167-8118181 email "amossab89@gmail.com" '''
+            attribute (save the change into the JSON file). Ex: $ update
+            BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com". '''
 
         if not args:
             print("** class name missing **")
@@ -203,7 +205,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_count(self, args):
-        ''' counts number of instncdsadwasdawdes created '''
+        ''' counts number of instnces created '''
         obj = storage.all()
         cnt = 0
         for key in obj:
@@ -212,8 +214,8 @@ class HBNBCommand(cmd.Cmd):
         print(cnt)
 
     def default(self, args):
-        ''' the method that defines actions on objects {<>}.all(), {<>}.count()
-        {<>}.show(), {<>}.desdasdawstroy(), {<>}.update()'''
+        ''' method defines actions on objects {<>}.all(), {<>}.count()
+        {<>}.show(), {<>}.destroy(), {<>}.update()'''
         cmd_dict = {
             "all": self.do_all,
             "count": self.do_count,

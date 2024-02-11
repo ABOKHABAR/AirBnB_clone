@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
-
-#Module name : State
+"""
+Module class: State
+"""
 
 
 class State(BaseModel):
-#what is class State"""
+    """definition for class State"""
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """ constructor way """
+        """ constructor method """
         super().__init__(self, *args, **kwargs)

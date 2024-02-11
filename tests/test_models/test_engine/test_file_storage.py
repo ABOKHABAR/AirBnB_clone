@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Modulename = FileStorage
+Unittest Module for FileStorage
 """
 import unittest
 from models import storage
@@ -12,15 +12,15 @@ import os
 
 
 class TestFileStorage(unittest.TestCase):
-    ''' Unittestr is to get  FileStorage class '''
+    ''' Unittest for FileStorage class '''
 
     def test_Instantiation(self):
-        ''' test instantiations '''
+        ''' checks instance is of class BaseModel '''
         obj = FileStorage()
         self.assertIsInstance(obj, FileStorage)
 
     def test_Access(self):
-        ''' read write access permissions '''
+        ''' test read-write access permissions '''
         rd = os.access('models/engine/file_storage.py', os.R_OK)
         self.assertTrue(rd)
         wr = os.access('models/engine/file_storage.py', os.W_OK)
@@ -30,20 +30,20 @@ class TestFileStorage(unittest.TestCase):
 
     def test_new(self):
         """
-        (saves new objectso into dictionary)test new
+        Tests method: new (saves new object into dictionary)
         """
         m_storage = FileStorage()
         instances_dic = m_storage.all()
         Aman = User()
-        Aman.id = 1258963147
-        Aman.name = "mossab"
+        Aman.id = 999999
+        Aman.name = "Aman"
         m_storage.new(Aman)
         key = Aman.__class__.__name__ + "." + str(Aman.id)
         self.assertIsNotNone(instances_dic[key])
 
     def test_reload(self):
         """
-    reload test method
+        Tests method: reload (reloads objects from string file)
         """
         a_storage = FileStorage()
         try:
@@ -58,12 +58,12 @@ class TestFileStorage(unittest.TestCase):
         self.assertIs(a_storage.reload(), None)
 
     def test_funcdocs(self):
-        ''' docstring functions to save'''
+        ''' testing functions docstring '''
         for func in dir(FileStorage):
             self.assertTrue(len(func.__doc__) > 0)
 
     def test_save(self):
-        ''' method of testing to save'''
+        ''' tests save method'''
         obj = FileStorage()
         new_obj = BaseModel()
         obj.new(new_obj)

@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 import unittest
 from models.review import Review
-"""Module name = Review class
+"""
+Unittest Module for Review class
 """
 
 
 class TestUser(unittest.TestCase):
-    ''' Undsadadittestsadadad for Review clasdasdss '''
+    ''' Unittest for Review class '''
 
     def test_object_Instantiation(self):
-        ''' instantiates class for instantce '''
+        ''' instantiates class '''
         self.review = Review()
 
     def testattr(self):
-        ''' tesdsadsadsadsadwst Class: Reviesdadsadaw attributes '''
+        ''' test Class: Review attributes '''
         self.review = Review()
         self.assertTrue(hasattr(self.review, "created_at"))
         self.assertTrue(hasattr(self.review, "updated_at"))
@@ -30,7 +31,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(self.review, "updated_at"))
 
     def teststr(self):
-        ''' testing asdsadsad__str__ retursadsadn format of BaseModel2123123132112sffa '''
+        ''' testing __str__ return format of BaseModel '''
         self.review = Review()
         s = "[{}] ({}) {}".format(self.review.__class__.__name__,
                                   str(self.review.id), self.review.__dict__)

@@ -2,18 +2,19 @@
 import unittest
 from models.place import Place
 """
-Module name = Place class
+Unittest Module for Place class
 """
 
 
 class TestUser(unittest.TestCase):
-    ''' Unittest fodadwaxxfsafsafwfsasdadwar Place class '''
+    ''' Unittest for Place class '''
 
     def test_object_Instantiation(self):
-        ''' idsadawnstantiates class '''
+        ''' instantiates class '''
         self.place = Place()
 
     def testattr(self):
+        ''' test Class: Place attributes '''
         self.place = Place()
         self.assertTrue(hasattr(self.place, "created_at"))
         self.assertTrue(hasattr(self.place, "updated_at"))
@@ -33,12 +34,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.place.amenity_ids, [])
 
     def testsave(self):
-        '''method of testing is saving '''
+        ''' testing method: save '''
         self.place = Place()
         self.place.save()
         self.assertTrue(hasattr(self.place, "updated_at"))
 
     def teststr(self):
+        ''' testing __str__ return format of BaseModel '''
         self.place = Place()
         s = "[{}] ({}) {}".format(self.place.__class__.__name__,
                                   str(self.place.id), self.place.__dict__)

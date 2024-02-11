@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-this is models init.py
-file is init.py inside models
+module executes whn models package is imported
 """
 
 

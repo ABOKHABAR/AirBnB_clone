@@ -2,14 +2,15 @@
 import unittest
 from models.base_model import BaseModel
 """
- Module name = BaseModel class
+Unittest Module for BaseModel class
 """
 
 
 class TestUser(unittest.TestCase):
+    ''' Unittest for BaseModel class '''
 
     def test_object_Instantiation(self):
-        ''' s classes '''
+        ''' instantiates class '''
         self.basemodel = BaseModel()
 
     def test_checking_for_functions(self):
@@ -18,7 +19,7 @@ class TestUser(unittest.TestCase):
         self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
     def testattr(self):
-        ''' User attributes class test'''
+        ''' test Class: User attributes '''
         self.basemodel = BaseModel()
         self.assertTrue(hasattr(self.basemodel, "created_at"))
         self.assertTrue(hasattr(self.basemodel, "updated_at"))
@@ -36,12 +37,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.basemodel.__class__.__name__, "BaseModel")
 
     def testsave(self):
-        ''' save method for testing '''
+        ''' testing method: save '''
         self.basemodel = BaseModel()
         self.basemodel.save()
         self.assertTrue(hasattr(self.basemodel, "updated_at"))
 
     def teststr(self):
+        ''' testing __str__ return format of BaseModel '''
         self.basemodel = BaseModel()
         s = "[{}] ({}) {}".format(self.basemodel.__class__.__name__,
                                   str(self.basemodel.id),

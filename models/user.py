@@ -1,13 +1,13 @@
-#!/usr/bin/python
-
-#class user
+#!/usr/bin/python3
+"""user class
+"""
 
 from models.base_model import BaseModel
 import json
 
 
 class User(BaseModel):
-    '''model base 12'''
+    '''base model class'''
 
     email = ""
     password = ""

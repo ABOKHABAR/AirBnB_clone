@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 """
-file City name
+Module class: City
 """
 
 
@@ -11,5 +11,5 @@ class City(BaseModel):
     state_id = ""
 
     def __init__(self, *args, **kwargs):
-        """ def init """
+        """ constructor method """
         super().__init__(self, *args, **kwargs)

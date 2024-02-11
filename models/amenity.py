@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 """
-Amenity
-file
-not empty
+Module class: Amenity
 """
 
 
 class Amenity(BaseModel):
-    """define this class Amenity 44"""
+    """definition for class Amenity"""
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """ empty comment """
+        """ constructor method """
         super().__init__(self, *args, **kwargs)

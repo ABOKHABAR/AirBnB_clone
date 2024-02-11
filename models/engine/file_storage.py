@@ -3,30 +3,34 @@ import os.path
 import json
 import os
 """
-Module name= file_storage
-Contains classes: File Storage
+Module file_storage
+Contains a class FileStorage
+that serializes instances to a JSON file and
+deserializes JSON file to instances
 """
 
 
 class FileStorage():
-    
-    ''' initialize the values '''
+    """
+    that serializes instances to a JSON file and deserializes JSON file
+    """
+    ''' initializing values '''
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-        ''' returns to the dictionary __objects not json '''
+        ''' returns the dictionary __objects '''
         return self.__objects
 
     def new(self, obj):
-        ''' sets in __objects '''
+        ''' sets in __objects the obj with key <obj class name>.id '''
         if obj:
             ''' adds the object and the key to __objects if the obj exists '''
             name = "{}.{}".format(obj.__class__.__name__, obj.id)
             self.__objects[name] = obj
 
     def save(self):
-# serializes __objects to JSON file
+        ''' serializes __objects to the JSON file (path: __file_path) '''
         my_dict = {}
 
         for keys, val in self.__objects.items():
@@ -37,7 +41,7 @@ class FileStorage():
             json.dump(my_dict, my_file)
 
     def reload(self):
-# deserializes json to objects
+        ''' deserializes/loads the JSON file to __objects '''
 
         from models.base_model import BaseModel
         from models.user import User

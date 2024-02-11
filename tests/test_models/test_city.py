@@ -2,19 +2,19 @@
 import unittest
 from models.city import City
 """
-Module name = City class
+Unittest Module for City class
 """
 
 
 class TestUser(unittest.TestCase):
-    ''' Unr City class test'''
+    ''' Unittest for City class '''
 
     def test_object_Instantiation(self):
-        ''' instantiates class for instantiates '''
+        ''' instantiates class '''
         self.city = City()
 
     def testattr(self):
-        '''  City attributes test class'''
+        ''' test Class: City attributes '''
         self.city = City()
         self.assertTrue(hasattr(self.city, "created_at"))
         self.assertTrue(hasattr(self.city, "updated_at"))
@@ -30,12 +30,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.city.__class__.__name__, "City")
 
     def testsave(self):
-        ''' save method for testing '''
+        ''' testing method: save '''
         self.city = City()
         self.city.save()
         self.assertTrue(hasattr(self.city, "updated_at"))
 
     def teststr(self):
+        ''' testing __str__ return format of BaseModel '''
         self.city = City()
         s = "[{}] ({}) {}".format(self.city.__class__.__name__,
                                   str(self.city.id), self.city.__dict__)

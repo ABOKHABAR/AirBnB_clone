@@ -2,7 +2,9 @@
 from models.base_model import BaseModel
 from models.place import Place
 from models.user import User
-#file name: review
+"""
+Module class: Review
+"""
 
 
 class Review(BaseModel):
@@ -12,5 +14,5 @@ class Review(BaseModel):
     user_id = ""
 
     def __init__(self, *args, **kwargs):
-#def init in consuctor way
+        """ constructor method """
         super().__init__(self, *args, **kwargs)

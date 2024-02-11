@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 """
-file name: Place
+Module class: Place
 """
 
 
 class Place(BaseModel):
-    """what is class Place?"""
+    """definition for class Place"""
     name = ""
     city_id = ""
     user_id = ""
@@ -20,5 +20,5 @@ class Place(BaseModel):
     amenity_ids = []
 
     def __init__(self, *args, **kwargs):
-        """ place construsction methoode """
+        """ constructor method """
         super().__init__(self, *args, **kwargs)
